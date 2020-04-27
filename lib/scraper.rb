@@ -34,6 +34,7 @@ class Scraper
       elsif site.values.include?("linkedin")
         links[:linkedin] = site.values[0]
       elsif site.values.include?("github")
+        puts "here"
         links[:github] = site.value[0]
       else
         links[:blog] = site.values[0]
