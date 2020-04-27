@@ -12,7 +12,7 @@ class Scraper
     doc = self.get_page(index_url)
     final = []
     students = doc.css(".student-card")
-    print students
+    #print students
     students.each do |card|
       name = card.css("a .student-name").text
       student = {:name => name,
