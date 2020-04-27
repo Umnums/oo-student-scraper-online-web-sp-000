@@ -32,7 +32,7 @@ class Scraper
       elsif site.values.first.include?("linkedin")
         links[:linkedin] = site.values[0]
       elsif site.values.first.include?("github")
-        links[:github] = site.value[0]
+        links[:github] = site.values[0]
       else
         links[:blog] = site.values[0]
       end
