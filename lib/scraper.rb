@@ -30,7 +30,7 @@ class Scraper
     ind_site.each do |site|
       # puts "#{site}"
       if site.include?("twitter")
-        links[:twitter] = site.text
+        links[:twitter] = site.values[0]
       elsif site.include?("linkedin")
         links[:linkedin] = site.text
       elsif site.include?("github")
