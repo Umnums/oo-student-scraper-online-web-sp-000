@@ -15,8 +15,8 @@ class Scraper
     print students
     students.each do |card|
       name = card.css("a .student-name").text
-      student = {:name => name
-      :location => card.css("a .student-location").text
+      student = {:name => name,
+      :location => card.css("a .student-location").text,
       :profile_url => card.css("a").attribute("href").text}
       final << student
     end
