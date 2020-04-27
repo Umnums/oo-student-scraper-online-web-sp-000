@@ -26,8 +26,19 @@ class Scraper
     doc = self.get_page(profile_url)
     socials = doc.css(".social-icon-container")
     links = {}
-    ind_site = site.css("a").attribute("href").text
-    print ind_site.split(/\s/)
+
+    ind_site = socials.css("a").attribute("href").text
+    puts "#{ind_site.split(/\s/)}"
+    #   if ind_site.include?("twitter")
+    #     links[:twitter] = ind_site
+    #   elsif ind_site.include?("linkedin")
+    #     links[:linkedin] = ind_site
+    #   elsif ind_site.include?("github")
+    #     links[:github] = ind_site
+    #   else
+    #     links[:blog] = ind_site
+    #   end
+    # end
     links[:profile_quote] = doc.css(".profile-quote").text
     links[:bio] = doc.css(".description-holder p").text
     links
