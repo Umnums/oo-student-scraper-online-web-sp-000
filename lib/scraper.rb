@@ -27,8 +27,8 @@ class Scraper
     socials = doc.css(".social-icon-container")
     links = {}
 
-    ind_site = socials.css("a").attribute("href").text
-    puts "#{ind_site.split(/\s/)}"
+    ind_site = socials.css("a").attribute("href").text.split(/\s/)
+    puts "#{ind_site.)}"
     #   if ind_site.include?("twitter")
     #     links[:twitter] = ind_site
     #   elsif ind_site.include?("linkedin")
