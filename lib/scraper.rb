@@ -13,6 +13,13 @@ class Scraper
     final = []
     students = doc.css(".student-card")
     print students
+    students.each do |card|
+      name = card.css("a .student-name").text
+      student = {:name => name
+      :location => card.css("a .student-location").text
+      :profile_url => card.css("a").attribute("href").text}
+      final << student
+    end
   end
 
   def self.scrape_profile_page(profile_url)
@@ -20,5 +27,6 @@ class Scraper
   end
 
 end
+
 
 Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/")
