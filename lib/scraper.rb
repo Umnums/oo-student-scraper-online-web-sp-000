@@ -26,15 +26,12 @@ class Scraper
     doc = self.get_page(profile_url)
     ind_site = doc.css(".social-icon-container a")
     links = {}
-    puts "#{ind_site}"
     ind_site.each do |site|
-      puts "#{site.values}"
       if site.values.first.include?("twitter")
         links[:twitter] = site.values[0]
       elsif site.values.first.include?("linkedin")
         links[:linkedin] = site.values[0]
-      elsif site.values.include?("github")
-        puts "here"
+      elsif site.values.first.include?("github")
         links[:github] = site.value[0]
       else
         links[:blog] = site.values[0]
@@ -42,7 +39,6 @@ class Scraper
     end
     links[:profile_quote] = doc.css(".profile-quote").text
     links[:bio] = doc.css(".description-holder p").text
-    puts "#{links}"
     links
 
   end
