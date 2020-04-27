@@ -20,6 +20,7 @@ class Scraper
       :profile_url => card.css("a").attribute("href").text}
       final << student
     end
+    final
   end
 
   def self.scrape_profile_page(profile_url)
