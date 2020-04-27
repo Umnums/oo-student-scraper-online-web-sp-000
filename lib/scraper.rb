@@ -11,7 +11,7 @@ class Scraper
   def self.scrape_index_page(index_url)
     doc = self.get_page(index_url)
     final = []
-    students = doc.css(".student-class")
+    students = doc.css(".student-card")
     print students
   end
 
