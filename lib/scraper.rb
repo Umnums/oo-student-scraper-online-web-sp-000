@@ -4,7 +4,7 @@ require 'nokogiri'
 
 class Scraper
 
-  def self.get_page(urL)
+  def self.get_page(url)
     Nokogiri::HTML(open(url))
   end
 
