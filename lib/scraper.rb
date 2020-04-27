@@ -26,7 +26,7 @@ class Scraper
     doc = self.get_page(profile_url)
     ind_site = doc.css(".social-icon-container a")
     links = {}
-    puts "#{socials}"
+    # puts "#{socials}"
     ind_site.each do |site|
       puts "#{site}"
       if site.include?("twitter")
