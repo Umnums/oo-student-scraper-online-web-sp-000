@@ -49,4 +49,4 @@ class Scraper
 end
 
 
-Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/")
+Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/")
