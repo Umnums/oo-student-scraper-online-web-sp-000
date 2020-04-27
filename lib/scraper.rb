@@ -12,7 +12,6 @@ class Scraper
     doc = self.get_page(index_url)
     final = []
     students = doc.css(".student-card")
-    #print students
     students.each do |card|
       name = card.css("a .student-name").text
       scraped_student = {:name => name,
@@ -29,7 +28,7 @@ class Scraper
     links = {}
     socials.each do |site|
       ind_site = site.css("a").attribute("href").text
-      puts "#{ind_site}"
+      puts "#{ind_site.split(/w/)}"
       if ind_site.include?("twitter")
         links[:twitter] = ind_site
       elsif ind_site.include?("linkedin")
