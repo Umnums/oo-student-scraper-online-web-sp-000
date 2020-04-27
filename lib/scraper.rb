@@ -40,6 +40,8 @@ class Scraper
       end
     end
     links[:profile_quote] = doc.css(".profile-quote").text
+    links[:bio] = doc.css(".description-holder p").text
+    links
 
   end
 
