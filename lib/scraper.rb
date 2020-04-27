@@ -32,11 +32,11 @@ class Scraper
       if site.include?("twitter")
         links[:twitter] = site.values[0]
       elsif site.include?("linkedin")
-        links[:linkedin] = site.text
+        links[:linkedin] = site.values[0]
       elsif site.include?("github")
-        links[:github] = site.text
+        links[:github] = site.value[0]
       else
-        links[:blog] = site.text
+        links[:blog] = site.values[0]
       end
     end
     links[:profile_quote] = doc.css(".profile-quote").text
