@@ -28,17 +28,17 @@ class Scraper
     links = {}
 
     ind_site = socials.css("a").attribute("href").text.split(/\s/)
-    puts "#{ind_site.)}"
-    #   if ind_site.include?("twitter")
-    #     links[:twitter] = ind_site
-    #   elsif ind_site.include?("linkedin")
-    #     links[:linkedin] = ind_site
-    #   elsif ind_site.include?("github")
-    #     links[:github] = ind_site
-    #   else
-    #     links[:blog] = ind_site
-    #   end
-    # end
+    ind_site.each do |site|
+      if ind_site.include?("twitter")
+        links[:twitter] = ind_site
+      elsif ind_site.include?("linkedin")
+        links[:linkedin] = ind_site
+      elsif ind_site.include?("github")
+        links[:github] = ind_site
+      else
+        links[:blog] = ind_site
+      end
+    end
     links[:profile_quote] = doc.css(".profile-quote").text
     links[:bio] = doc.css(".description-holder p").text
     links
