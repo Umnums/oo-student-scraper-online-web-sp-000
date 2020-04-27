@@ -24,7 +24,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     doc = self.get_page(profile_url)
-    socials = doc.css(".social-icon-container")
+    socials = doc.css(".social-icon-container a")
     links = {}
     puts "#{socials}"
     # ind_site.each do |site|
