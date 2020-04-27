@@ -40,7 +40,7 @@ class Scraper
       end
     end
       links[:profile_quote] = doc.css(".profile-quote").text
-      
+
   end
 
 end
