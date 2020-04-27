@@ -27,7 +27,7 @@ class Scraper
     socials = doc.css(".social-icon-container")
     links = {}
     ind_site = site.css("a").attribute("href").text
-    puts "#{ind_site.split(/\s/)}"
+    print ind_site.split(/\s/)
     links[:profile_quote] = doc.css(".profile-quote").text
     links[:bio] = doc.css(".description-holder p").text
     links
