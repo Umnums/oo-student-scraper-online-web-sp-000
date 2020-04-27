@@ -28,6 +28,7 @@ class Scraper
     links = {}
 
     ind_site = socials.css("a").attribute("href").text.split(/\s/)
+    print ind_site
     ind_site.each do |site|
       if site.include?("twitter")
         links[:twitter] = site
