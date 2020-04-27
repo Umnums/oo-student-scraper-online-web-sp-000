@@ -30,13 +30,13 @@ class Scraper
     ind_site.each do |site|
       puts "#{site}"
       if site.include?("twitter")
-        links[:twitter] = site.value
+        links[:twitter] = site.values
       elsif site.include?("linkedin")
-        links[:linkedin] = site.value
+        links[:linkedin] = site.values
       elsif site.include?("github")
-        links[:github] = site.value
+        links[:github] = site.values
       else
-        links[:blog] = site.value
+        links[:blog] = site.values
       end
     end
     links[:profile_quote] = doc.css(".profile-quote").text
